@@ -1736,7 +1736,7 @@ elif [[ "$resposta" = '3' ]]; then
         fun_socks
     fi
     		
-elif [[ "$resposta" = '5' ]]; then
+elif [[ "$resposta" = '5.1.1' ]]; then
 		clear
 		if ps x | grep -w cyberproxy | grep -v grep 1>/dev/null 2>/dev/null; then
 		echo -e "\E[41;1;37m           CYBER PROXY               \E[0m"
@@ -1797,7 +1797,7 @@ elif [[ "$resposta" = '5' ]]; then
 			fi			
 			
 						
-elif [[ "$resposta" = '5.1' ]]; then
+elif [[ "$resposta" = '5' ]]; then
     clear
     if ps x | grep -w cyberproxy | grep -v grep 1>/dev/null 2>/dev/null; then
         echo -e "\E[41;1;37m             CYBER PROXY               \E[0m"
