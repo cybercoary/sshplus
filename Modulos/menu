@@ -179,7 +179,7 @@ clear
 echo -e "\E[38;5;18m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
 echo -e "\E[38;5;18m┃\E[44;1;37m                FERRAMENTAS              \E[0m\E[38;5;18m┃"
 echo -e "\E[38;5;18m┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m"
-echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[38;1;33mSINCRONIZACAO PAINEL WEB"
+echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[38;1;33mSINCRONIZACAO PAINEL ATLAS"
 echo -e "\E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m➜ \E[38;1;33mATUALIZAR CERTIFICADO SSL"
 echo -e "\E[38;5;196m|\E[38;5;33m03\E[38;5;196m|\033[1;37m➜ \E[38;1;33mMENU APACHE"
 echo -e "\E[38;5;196m|\E[38;5;33m00\E[38;5;196m|\033[1;37m➜ \E[38;1;33mVOLTAR"
@@ -188,7 +188,7 @@ echo -ne "\033[1;32mO QUE VOCE DESEJA FAZER \033[1;37m?\033[1;31m?\033[1;37m : "
 case "$x" in
     1 | 01)
     clear
-    bash <(wget -qO- https://raw.githubusercontent.com/Cyber-ssh/sync/main/sincpainel)
+    wget -O modulosinstall.sh "https://raw.githubusercontent.com/cybercoary/sincatlas/main/modulosinstall.sh" && chmod 777 modulosinstall.sh && dos2unix modulosinstall.sh && ./modulosinstall.sh && menu && pkill -f modulo.py > /dev/null 2>&1
     echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
     menu
 	;;
@@ -253,34 +253,6 @@ case "$x" in
    1 | 01)
    clear
    mudardata
-   ;;
-   0 | 00)
-   clear
-   menu
-   ;;
-   *)
-   echo -e "\n\033[1;31mOpcao invalida !\033[0m"
-   sleep 2
-esac
-done
-}
-
-botzap () {
-while true $x != "ok"
-do
-clear
-echo -e "BOTZAP" | figlet
-echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \033[1;33mBOTZAP \033[0m"
-echo -e "\E[38;5;196m|\E[38;5;33m00\E[38;5;196m|\033[1;37m➜ \033[1;33mVOLTAR\033[0m"
-echo -e ""
-echo -ne "\E[38;5;40mO QUE DESEJA FAZER \033[1;37m?\033[1;31m?\033[1;37m:"; read x
-case "$x" in 
-   1 | 01)
-   clear
-   wget https://cybercoari.com.br/cybercoari/Tbot/TBotPlus_Cliente_2008_v1.0.9.zip
-   unzip TBotPlus_Cliente_*.zip && cd TBotPlus; chmod +x TerminusBot.sh && ./TerminusBot.sh
-   wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-   terminus
    ;;
    0 | 00)
    clear
@@ -482,7 +454,8 @@ echo -e "\E[38;5;18m┃\E[38;5;40mSISTEMA               MEMÓRIA RAM          PR
 echo -e "\E[38;5;18m┃\033[1;31mOS: \033[1;37m$_system    \033[1;31mTotal:\033[1;37m$_ram     \033[1;31mNucleos: \033[1;37m$_core\033[0m   \E[38;5;18m┃"
 echo -e "\E[38;5;18m┃\033[1;31mHora: \033[1;37m$_hora        \033[1;31mEm uso: \033[1;37m$_usor     \033[1;31mEm uso: \033[1;37m$_usop\033[0m    \E[38;5;18m┃"
 [[ ! -e /tmp/att ]]  && {
-    echo -e "\E[38;5;18m┃\E[38;5;40mOnlines:\033[1;37m $_onlin        \033[1;31mExpirados: \033[1;37m$_userexp     \033[1;33mTotal: \033[1;37m$_tuser\033[0m         \E[38;5;18m┃"
+echo -e "\E[38;5;18m┃\E[1;32mOnlines:\033[1;37m $_onlin        \033[1;31mExpirados: \033[1;37m$_userexp     \033[1;33mTotal: \033[1;37m$_tuser\033[0m         \E[38;5;18m┃"
+echo -e "\E[38;5;18m┃\E[1;32mBadvpn:\033[1;37m $stsu            \033[1;32m                                  \E[38;5;18m┃"    
     var01='\033[1;37m➜'
 } || {
     echo -e "\E[38;5;18m┃  \033[1;37m[\033[1;31m!\033[1;37m]      \033[1;32mEXISTE UMA ATUALIZACAO DISPONIVEL  \033[1;37m[\033[1;31m!\033[1;37m]\033[0m      \E[38;5;18m┃"
