@@ -455,7 +455,7 @@ echo -e "\E[38;5;18m┃\033[1;31mOS: \033[1;37m$_system    \033[1;31mTotal:\033[
 echo -e "\E[38;5;18m┃\033[1;31mHora: \033[1;37m$_hora        \033[1;31mEm uso: \033[1;37m$_usor     \033[1;31mEm uso: \033[1;37m$_usop\033[0m    \E[38;5;18m┃"
 [[ ! -e /tmp/att ]]  && {
 echo -e "\E[38;5;18m┃\E[1;32mOnlines:\033[1;37m $_onlin        \033[1;31mExpirados: \033[1;37m$_userexp     \033[1;33mTotal: \033[1;37m$_tuser\033[0m         \E[38;5;18m┃"
-echo -e "\E[38;5;18m┃\E[1;32mBadvpn:\033[1;37m $stsu            \033[1;32m                                  \E[38;5;18m┃"    
+echo -e "\E[38;5;18m┃\E[1;32mBadvpn:\033[1;37m $stsu            \033[1;32mCheckUser                                  \E[38;5;18m┃"    
     var01='\033[1;37m➜'
 } || {
     echo -e "\E[38;5;18m┃  \033[1;37m[\033[1;31m!\033[1;37m]      \033[1;32mEXISTE UMA ATUALIZACAO DISPONIVEL  \033[1;37m[\033[1;31m!\033[1;37m]\033[0m      \E[38;5;18m┃"
