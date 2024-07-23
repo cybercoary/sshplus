@@ -1,6 +1,11 @@
 #!/bin/bash
 #===================================================
-#   CANAL TELEGRAM: http://t.me/cybercoari
+#   SCRIPT: BOT SSHPLUS MANAGER
+#   DATA ATT: 24 de Jan 2021
+#   DESENVOLVIDO POR: CRAZY_VPN
+#   API SHELLBOT: SHAMAN
+#   CONTATO TELEGRAM: http://t.me/crazy_vpn
+#   CANAL TELEGRAM: http://t.me/sshplus
 #===================================================
 [[ ! -d /etc/SSHPlus ]] && exit 0
 [[ ! -d /etc/bot ]] && exit 0
