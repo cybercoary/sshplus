@@ -1212,7 +1212,7 @@ fun_backauto() {
             mkdir /etc/SSHPlus/backups
             [[ $(crontab -l | grep -c "userbackup") = '0' ]] && (
                 crontab -l 2>/dev/null
-                echo "0 */6 * * * /bin/userbackup 1"
+                echo "0 0 * * * /bin/userbackup 1"
             ) | crontab -
             s
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
