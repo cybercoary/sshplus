@@ -1615,7 +1615,66 @@ exit 0' >$RCLOCAL
 				fun_socks
 			fi
 
+
 elif [[ "$resposta" = '3' ]]; then
+    clear
+    if ps x | grep -w security | grep -v grep 1>/dev/null 2>/dev/null; then
+        echo -e "\E[41;1;37m          WEBSOCKET SECURITY         \E[0m"
+        echo ""
+        fun_securityoff() {
+            for pidsecurity in $(screen -ls | grep ".security" | awk {'print $1'}); do
+                screen -r -S "$pidsecurity" -X quit
+            done
+            [[ $(grep -wc "security" /etc/autostart) != '0' ]] && {
+                sed -i '/security/d' /etc/autostart
+            }
+            sleep 1
+            screen -wipe >/dev/null
+        }
+        echo -e "\033[1;32mDESATIVANDO O WEBSOCKET SECURITY\033[1;33m"
+        echo ""
+        fun_bar 'fun_securityoff'
+        echo ""
+        echo -e "\033[1;32mSECURITY DESATIVADO COM SUCESSO!\033[1;33m"
+        
+        fun_socks
+    else
+        echo -e "\E[44;1;37m          WEBSOCKET SECURITY         \E[0m"
+        echo ""
+        echo -e "\033[1;32mQUAL PORTA DESEJA ULTILIZAR ? \033"
+        echo ""
+        echo -e "\033[1;32mEXEMPLO :\033[1;33m80 ou 8080\033"
+        echo ""
+        read -p "$(echo -e "\033[1;32mQUAL PORTA DESEJA UTILIZAR? \033[1;37m: ")" portaws
+        [[ -z "$portaws" ]] && {
+            echo ""
+            echo -e "\033[1;31mPorta invalida!"
+            
+            fun_socks
+        }
+        verif_ptrs $portaws
+        fun_inisecurity() {
+            sleep 1
+            screen -dmS security /etc/SSHPlus/security -proxy_port 0.0.0.0:$portaws -msg=SECURITY
+            [[ $(grep -wc "security" /etc/autostart) = '0' ]] && {
+                echo -e "netstat -tlpn | grep -w $portaws > /dev/null || {  screen -r -S 'security' -X quit;  screen -dmS security /etc/SSHPlus/security -proxy_port 0.0.0.0:$portaws -msg=SECURITY; }" >>/etc/autostart
+            } || {
+                sed -i '/security/d' /etc/autostart
+                echo -e "netstat -tlpn | grep -w $portaws > /dev/null || {  screen -r -S 'security' -X quit;  screen -dmS security /etc/SSHPlus/security -proxy_port 0.0.0.0:$portaws -msg=SECURITY; }" >>/etc/autostart
+            }
+        }
+        echo ""
+        echo -e "\033[1;32mINICIANDO WEBSOCKET SECURITY\033[1;33m"
+        echo ""
+        fun_bar 'fun_inisecurity'
+        echo ""
+        echo -e "\033[1;32SECURITY ATIVADO COM SUCESSO\033[1;33m"
+        
+        fun_socks
+    fi
+
+
+elif [[ "$resposta" = '0300' ]]; then
 		clear
 		if ps x | grep -w WebSocket | grep -v grep 1>/dev/null 2>/dev/null; then
 		echo -e "\E[41;1;37m           WEBSOCKET SECURITY               \E[0m"
