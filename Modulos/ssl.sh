@@ -1,7 +1,8 @@
 #/bin/bash
 clear
 echo -e "ATUALIZANDO REPOSITÓRIOS, AGUARDE..."
-echo -e "@cybercoari ☆☆☆☆☆..."
+echo -e "Script feito por @cybercoari ☆☆☆☆☆"
+echo -e "\E[38;1;33m @cybercoari"
 sleep 3
 apt update; apt upgrade -y; clear
 echo -e "Instalado gerenciador de arquivos compatctados..."
@@ -16,5 +17,4 @@ echo -e "Atualização do certificado SSL concluída"
 echo -e "Reinicie o servidor para que as mudancas "
 echo -e "entrem em vigor imediatamente!!"
 echo ""
-echo -e "Script feito por @cybercoari ☆☆☆☆☆"
 cd; rm ssl.sh
