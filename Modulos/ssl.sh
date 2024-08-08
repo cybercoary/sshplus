@@ -1,6 +1,7 @@
 #/bin/bash
 clear
 echo -e "ATUALIZANDO REPOSITÓRIOS, AGUARDE..."
+echo -e "@cybercoari ☆☆☆☆☆..."
 sleep 3
 apt update; apt upgrade -y; clear
 echo -e "Instalado gerenciador de arquivos compatctados..."
