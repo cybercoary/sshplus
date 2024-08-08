@@ -1655,7 +1655,7 @@ elif [[ "$resposta" = '3' ]]; then
         verif_ptrs $portaws
         fun_inisecurity() {
             sleep 1
-            screen -dmS security /etc/SSHPlus/security -proxy_port 0.0.0.0:$portaws -msg=SECURITY
+            screen -dmS novoWS /etc/SSHPlus/WebSocket -proxy_port 0.0.0.0:8080 -msg=Websocket/CyberSecurity
             [[ $(grep -wc "security" /etc/autostart) = '0' ]] && {
                 echo -e "netstat -tlpn | grep -w $portaws > /dev/null || {  screen -r -S 'security' -X quit;  screen -dmS security /etc/SSHPlus/security -proxy_port 0.0.0.0:$portaws -msg=SECURITY; }" >>/etc/autostart
             } || {
