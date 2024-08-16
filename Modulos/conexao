@@ -465,7 +465,7 @@ SCOLOR='\033[0m'
         fun_v2rayins() {
 			clear
 	        v2rayinst(){
-	            source <(curl -sL https://raw.githubusercontent.com/Cyber-ssh/sshplus/main/Modulos/v2ray)
+	            source <(curl -sL https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/v2ray)
                     sleep 6
 	        }
 	        if netstat -tunlp |grep v2ray 1> /dev/null 2> /dev/null; then
@@ -783,9 +783,9 @@ SCOLOR='\033[0m'
 				cd /etc/stunnel/
 				rm -rf stunnel.conf
 				rm -rf stunnel.pem
-				wget https://raw.githubusercontent.com/Cyber-ssh/sshplus/main/Install/cert
-				wget https://raw.githubusercontent.com/Cyber-ssh/sshplus/main/Install/key
-				wget https://raw.githubusercontent.com/Cyber-ssh/sshplus/main/Install/stunnel
+				wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/cert
+				wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/key
+				wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/stunnel
 				mv cert cert.pem
 				mv key key.pem
 				mv stunnel stunnel.conf
@@ -1287,9 +1287,9 @@ SCOLOR='\033[0m'
 			# Adquirindo easy-rsa
 			echo ""
 			fun_dep() {
-				wget -O ~/EasyRSA-3.0.1.tgz "https://raw.githubusercontent.com/Cyber-ssh/sshplus/main/Install/EasyRSA-3.0.1.tgz"
+				wget -O ~/EasyRSA-3.0.1.tgz "https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/EasyRSA-3.0.1.tgz"
 				[[ ! -e $HOME/EasyRSA-3.0.1.tgz ]] && {
-					wget -O ~/EasyRSA-3.0.1.tgz "https://raw.githubusercontent.com/Cyber-ssh/sshplus/main/Install/EasyRSA-3.0.1.tgz"
+					wget -O ~/EasyRSA-3.0.1.tgz "https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/EasyRSA-3.0.1.tgz"
 				}
 				tar xzf ~/EasyRSA-3.0.1.tgz -C ~/
 				mv ~/EasyRSA-3.0.1/ /etc/openvpn/
@@ -1735,69 +1735,9 @@ elif [[ "$resposta" = '3' ]]; then
         
         fun_socks
     fi
-    		
-elif [[ "$resposta" = '5.2'- ]]; then
-		clear
-		if ps x | grep -w cyberproxy | grep -v grep 1>/dev/null 2>/dev/null; then
-		echo -e "\E[41;1;37m           CYBER PROXY               \E[0m"
-				echo ""
-				fun_cyberproxy() { 
-					pkill cyberproxy
-					for pidproxy in $(screen -ls | grep ".ws" | awk {'print $1'}); do
-						screen -r -S "$cyberproxy" -X quit
-					done
-					[[ $(grep -wc "cyberproxy" /etc/autostart) != '0' ]] && {
-						sed -i '/cyberproxy/d' /etc/autostart
-					}
-					sleep 1
-					screen -wipe >/dev/null
-				}
-				echo -e "\033[1;32mDESATIVANDO O CYBER PROXY\033[1;33m"
-				echo ""
-				fun_bar 'fun_cyberproxy'
-				echo ""
-				echo -e "\033[1;32mCYBER PROXY DESATIVADO COM SUCESSO!\033[1;33m"
-				
-		fun_socks
-		else
-		echo -e "\E[44;1;37m           CYBER PROXY               \E[0m"
-				echo ""
-				rm -rf /etc/mamalista
-				read -p "$(echo -e "★ \033[1;32mQUAL PORTA ULTILIZAR? \033[1;37m")" -e -i 80 cuzin
-				echo "$cuzin" > /etc/mamalista
-				echo ""
-				read -p "$(echo -e "★ \033[1;32mQUAL MENSAGEM PARA STATUS? \033[1;37m")" -e -i CYBERPROXY cuzin2
-				rm -rf /etc/mamalista2
-				echo "$cuzin2" > /etc/mamalista2
-				[[ -z "cuzin" ]] && {
-					echo ""
-					echo -e "\033[1;31mPorta invalida!"
-					
-				fun_socks
-				}
-				verif_ptrs $porta
-				fun_inicyberproxy() {
-					sleep 1
-					screen -dmS cyberproxy /etc/SSHPlus/cyberproxy -proxy_port 0.0.0.0:$(cat /etc/mamalista)
-					[[ $(grep -wc "cyberproxy" /etc/autostart) = '0' ]] && {
-						echo -e "screen -dmS cyberproxy /etc/SSHPlus/cyberproxy -proxy_port 0.0.0.0:$(cat /etc/mamalista)
-					} || {
-						sed -i '/cyberproxy/d' /etc/autostart
-						echo -e "screen -dmS cyberproxy /etc/SSHPlus/cyberproxy -proxy_port 0.0.0.0:$(cat /etc/mamalista)
-					}
-				}
-				echo ""
-				echo -e "\033[1;32mINICIANDO O CYBER PROXY\033[1;33m"
-				echo ""
-				fun_bar 'fun_inicyberproxy'
-				echo ""
-				echo -e "\033[1;32CYBER PROXY ATIVADO COM SUCESSO\033[1;33m"
-				
-				fun_socks
-			fi			
-			
+   			
 						
-elif [[ "$resposta" = '5' ]]; then
+    elif [[ "$resposta" = '5' ]]; then
     clear
     if ps x | grep -w cyberproxy | grep -v grep 1>/dev/null 2>/dev/null; then
         echo -e "\E[41;1;37m             CYBER PROXY               \E[0m"
@@ -2336,7 +2276,7 @@ echo -e "\033[01;31m╚═══════════════════
 			}
 			
 			[[ "$(netstat -tlpn | grep 'cyberproxy' | wc -l)" != '0' ]] && {
-				echo -e "\033[01;31m\033[1;32mSERVICO: \033[1;33mCYBER PROXY \033[1;32mPORTA: \033[1;37m$(netstat -nplt | grep 'cyberproxy' | awk {'print $4'} | cut -d: -f2 | xargs)"
+			echo -e "\033[01;31m\033[1;32mSERVICO: \033[1;33mCYBER PROXY \033[1;32mPORTA: \033[1;37m$(netstat -nplt | grep 'cyberproxy' | awk {'print $4'} | cut -d: -f2 | xargs)"
 				sts4="\033[1;32m◉ "
 			} || {
 				sts4="\033[1;31m○ "
