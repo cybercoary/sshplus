@@ -36,7 +36,7 @@ echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
 _dir1='/bin'
 _dir2='/etc/SSHPlus'
 rm $_dir2/ShellBot.sh $_dir2/cabecalho $_dir2/open.py $_dir2/proxy.py $_dir2/wsproxy.py >/dev/null 2>&1
-_mdls=("addhost" "delhost" "alterarsenha" "criarusuario" "expcleaner" "mudardata" "remover" "criarteste" "verifbot" "droplimiter" "alterarlimite" "ajuda" "sshmonitor" "badvpn" "ddos" "userbackup" "instsqd" "blockt" "otimizar" "ssl.sh" "menu" "apache2menu" "speedtest" "banner" "senharoot" "reiniciarservicos" "reiniciarsistema" "attscript" "conexao" "delscript" "detalhes" "botssh" "infousers" "verifatt" "limiter" "uexpired" "cabecalho" "bot" "open.py" "wssecurity.sh" "websocket.sh" "WebSocket" "wssecury" "wssecurity" "cyberproxy" "proxydt" "proxy.py" "socks.py" "wsproxy.py" "trojan-go" "onlineapp" "swapmemory" "initbot" "initcheck" "pkill.sh")
+_mdls=("addhost" "delhost" "alterarsenha" "criarusuario" "expcleaner" "mudardata" "remover" "criarteste" "verifbot" "droplimiter" "alterarlimite" "ajuda" "sshmonitor" "badvpn" "ddos" "userbackup" "instsqd" "blockt" "otimizar" "ssl.sh" "menu" "apache2menu" "speedtest" "banner" "senharoot" "reiniciarservicos" "reiniciarsistema" "attscript" "conexao" "delscript" "detalhes" "botssh" "infousers" "verifatt" "limiter" "uexpired" "cabecalho" "bot" "open.py" "wssecurity.sh" "websocket.sh" "WebSocket" "rps_cpu" "wssecurity" "cyberproxy" "proxydt" "proxy.py" "wsproxy.py" "trojan-go" "onlineapp" "swapmemory" "initbot" "initcheck" "pkill.sh")
 for _arq in ${_mdls[@]}; do
 	[[ -e $_dir1/$_arq ]] && rm $_dir1/$_arq >/dev/null 2>&1
 	wget -c -P $_dir1 https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/$_arq
@@ -89,4 +89,4 @@ service ssh restart >/dev/null 2>&1
 rm -rf $lst1/list >/dev/null 2>&1
 cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/proxydt && chmod 777 proxydt && cd $HOME
 cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/cyberproxy && chmod 777 cyberproxy && cd $HOME
-cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/modderajuda/donomodderajuda/main/I/security && wget https://raw.githubusercontent.com/modderajuda/donomodderajuda/main/I/pub.key && wget https://raw.githubusercontent.com/modderajuda/donomodderajuda/main/I/priv.pem && chmod 777 security && cd $HOME
+cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/security && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/pub.key && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/priv.pem && chmod 777 security && cd $HOME
