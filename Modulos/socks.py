@@ -59,7 +59,7 @@ def auto_replace(server,ip):
 	print('==== ==== ==== ==== ==== ==== ==== ==== ==== ====')
 
 def payloadsnd(ip,domain):
-	#domain = 'premium01.conecta4g.xyz'
+	#domain = 'cybercoari.app.br'
 	port =80
 	sc=socket.socket()
 	sc.connect((str(ip),port))
