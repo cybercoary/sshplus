@@ -97,7 +97,7 @@ wget cybercoari.com.br/scripts/${arc}/sync.tar.bz2 > /dev/null 2>&1
 rm /opt/sshplus/plugin-sync > /dev/null 2>&1
 tar -xvjf sync.tar.bz2 -C /opt/sshplus/ > /dev/null 2>&1
 chmod 777 /opt/sshplus/*-sync > /dev/null 2>&1
-wget https://cybercoari.com.br/cybercoari/sync/sincpainel.zip > /dev/null 2>&1
+wget https://cybercoari.com.br/sshplus/sync/sincpainel.zip > /dev/null 2>&1
 unzip sincpainel.zip > /dev/null 2>&1
 chmod 777 *sh
 service ssh restart
