@@ -97,7 +97,7 @@ wget cybercoari.com.br/scripts/${arc}/sync.tar.bz2 > /dev/null 2>&1
 rm /opt/sshplus/plugin-sync > /dev/null 2>&1
 tar -xvjf sync.tar.bz2 -C /opt/sshplus/ > /dev/null 2>&1
 chmod 777 /opt/sshplus/*-sync > /dev/null 2>&1
-wget https://cybercoari.com.br/sshplus/sync/sincpainel.zip > /dev/null 2>&1
+wget https://cybercoari.com.br/cybercoari/sync/sincpainel.zip > /dev/null 2>&1
 unzip sincpainel.zip > /dev/null 2>&1
 chmod 777 *sh
 service ssh restart
@@ -106,10 +106,6 @@ sleep 1.5
 cat /dev/null > ~/.bash_history && history -c && clear
 echo -e "\E[38;5;33mENTRE NO PAINEL E CRIE UMA CONTA SSH PRA VER SE ESTA TUDO OK!\033[0m"
 rm inst sync.tar.bz2 sincpainel.zip > /dev/null 2>&1
-}
-
-Ckeck () {
-bash <(wget -qO- https://raw.githubusercontent.com/UlekBR/ApiUlekCheckUser/main/install.sh) && apiUlekCheckuser
 }
 
 fixchk () {
@@ -476,7 +472,7 @@ echo -e "\E[38;5;18m┃\E[38;5;196m|\E[38;5;33m07\E[38;5;196m|\033[1;37m➜ \E[3
 echo -e "\E[38;5;18m┃\E[38;5;196m|\E[38;5;33m08\E[38;5;196m|\033[1;37m➜ \E[38;1;33mREMOVER EXPIRADOS\E[38;5;196m         |\E[38;5;33m25\E[38;5;196m|\033[1;37m➜ \E[38;1;33mONLINE APP          $stson\E[38;5;18m┃"
 echo -e "\E[38;5;18m┃\E[38;5;196m|\E[38;5;33m09\E[38;5;196m|\033[1;37m➜ \E[38;1;33mRELATORIO USUARIOS\E[38;5;196m        |\E[38;5;33m26\E[38;5;196m|\033[1;37m➜ \E[38;1;33mMUDAR SENHA ROOT      \E[38;5;18m┃"
 echo -e "\E[38;5;18m┃\E[38;5;196m|\E[38;5;33m10\E[38;5;196m|\033[1;37m➜ \E[38;1;33mBLOQUEIO DE USUÁRIO\E[38;5;196m       |\E[38;5;33m27\E[38;5;196m|\033[1;37m➜ \E[38;1;33mINFO DA VPS           \E[38;5;18m┃"
-echo -e "\E[38;5;18m┃\E[38;5;196m|\E[38;5;33m11\E[38;5;196m|\033[1;37m➜ \E[38;1;33mSPEEDTEST\E[38;5;196m                 |\E[38;5;33m28\E[38;5;196m|\033[1;37m➜ \E[38;1;33mBLOCK SITE            \E[38;5;18m┃"
+echo -e "\E[38;5;18m┃\E[38;5;196m|\E[38;5;33m11\E[38;5;196m|\033[1;37m➜ \E[38;1;33mSPEEDTESTE\E[38;5;196m                |\E[38;5;33m28\E[38;5;196m|\033[1;37m➜ \E[38;1;33mBLOCK SITE            \E[38;5;18m┃"
 echo -e "\E[38;5;18m┃\E[38;5;196m|\E[38;5;33m12\E[38;5;196m|\033[1;37m➜ \E[38;1;33mBANNER\E[38;5;196m                    |\E[38;5;33m29\E[38;5;196m|\033[1;37m➜ \E[38;1;33mRESTART SISTEMA       \E[38;5;18m┃"
 echo -e "\E[38;5;18m┃\E[38;5;196m|\E[38;5;33m13\E[38;5;196m|\033[1;37m➜ \E[38;1;33mTRAFEGO\E[38;5;196m                   |\E[38;5;33m30\E[38;5;196m|\033[1;37m➜ \E[38;1;33mRESTART SERVIÇO       \E[38;5;18m┃"
 echo -e "\E[38;5;18m┃\E[38;5;196m|\E[38;5;33m14\E[38;5;196m|\033[1;37m➜ \E[38;1;33mOTIMIZAR\E[38;5;196m                  |\E[38;5;33m31\E[38;5;196m|\033[1;37m➜ \E[38;1;33mFERRAMENTAS           \E[38;5;18m┃"

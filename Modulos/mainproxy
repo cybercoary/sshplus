@@ -5,7 +5,7 @@ install_proxy() {
     echo "Instalando o proxy..."
     {
         rm -f /usr/bin/proxy
-        curl -s -L -o /usr/bin/proxy https://raw.githubusercontent.com/cybercoari/sshplus/main/Modulos/proxy
+        curl -s -L -o /usr/bin/proxy https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/proxy
         chmod +x /usr/bin/proxy
     } > /dev/null 2>&1
     echo "Proxy instalado com sucesso."
@@ -15,13 +15,13 @@ install_proxy() {
 uninstall_proxy() {
     echo -e "\nDesinstalando o proxy..."
     
-    # Encontra e remove todos os arquivos de serviço do proxy
+# Encontra e remove todos os arquivos de serviço do proxy
     service_files=$(find /etc/systemd/system -name 'proxy-*.service')
     for service_file in $service_files; do
         service_name=$(basename "$service_file")
         service_name=${service_name%.service}
         
-        # Verifica se o serviço está ativo antes de tentar parar e desabilitar
+# Verifica se o serviço está ativo antes de tentar parar e desabilitar
         if  systemctl is-active "$service_name" &> /dev/null; then
             systemctl stop "$service_name"
             systemctl disable "$service_name"
@@ -55,7 +55,7 @@ configure_and_start_service() {
     RESPONSE=""
     
     if [[ $HTTP_OR_HTTPS == "H" || $HTTP_OR_HTTPS == "h" ]]; then
-        read -p "DIGITE STATUS DO PROXY DTUNNEL (--response): " RESPONSE
+        read -p "DIGITE STATUS DO PROXY CYBERCOARI (--response): " RESPONSE
     fi
     
     read -p "Você quer usar apenas SSH (Y/N)? [Y/N]: " SSH_ONLY
@@ -151,52 +151,52 @@ while true; do
     clear
     
     echo -e "\033[1;34m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
-    echo -e "\033[1;34m┃\033[1;41m\033[1;32m      PROXY DTUNNEL-MOD       \033[0m\033[1;34m┃"
+    echo -e "\033[1;34m┃\033[1;41m\033[1;32m          CYBER COARI         \033[0m\033[1;34m┃"
     echo -e "\033[1;34m┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫\033[0m"
 
     show_ports_in_use
     
-    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m01\033[1;36m] \033[1;32m• \033[1;31mABRIR PORTA            \033[1;34m┃"
-    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m02\033[1;36m] \033[1;32m• \033[1;31mFECHAR PORTA           \033[1;34m┃"
-    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m03\033[1;36m] \033[1;32m• \033[1;31mREINICIAR PORTA        \033[1;34m┃"
-    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m04\033[1;36m] \033[1;32m• \033[1;31mMONITOR                \033[1;34m┃"
-    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m05\033[1;36m] \033[1;32m• \033[1;31mREINSTALAR PORTA       \033[1;34m┃"
-    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m06\033[1;36m] \033[1;32m• \033[1;31mDESINSTALAR PROXY      \033[1;34m┃"
-    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m07\033[1;36m] \033[1;32m• \033[1;31mSAIR                   \033[1;34m┃"
+    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m01\033[1;36m] \033[1;32m• \033[1;33mABRIR PORTA            \033[1;34m┃"
+    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m02\033[1;36m] \033[1;32m• \033[1;33mFECHAR PORTA           \033[1;34m┃"
+    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m03\033[1;36m] \033[1;32m• \033[1;33mREINICIAR PORTA        \033[1;34m┃"
+    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m04\033[1;36m] \033[1;32m• \033[1;33mMONITOR                \033[1;34m┃"
+    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m05\033[1;36m] \033[1;32m• \033[1;33mREINSTALAR PORTA       \033[1;34m┃"
+    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m06\033[1;36m] \033[1;32m• \033[1;33mDESINSTALAR PROXY      \033[1;34m┃"
+    echo -e "\033[1;34m┃\033[1;36m[\033[1;32m00\033[1;36m] \033[1;32m• \033[1;31mSAIR                   \033[1;34m┃"
     echo -e "\033[1;34m┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m"
-    read -p "Escolha uma opção: " choice
+    echo -ne "\E[38;5;40mO QUE VOCE DESEJA FAZER \033[1;37m?\033[1;31m?\033[1;37m: " ;  read x
 
-    case $choice in
+    case "$x" in
         1)
-            configure_and_start_service
+        configure_and_start_service
         ;;
         2)
-            stop_and_remove_service
+        stop_and_remove_service
         ;;
         3)
-            echo "Serviços em execução:"
-            systemctl list-units --type=service --state=running | grep proxy-
-            read -p "Digite o número do serviço a ser reiniciado: " service_number
-            systemctl restart proxy-$service_number
-            echo "Serviço proxy-$service_number reiniciado."
+        echo "Serviços em execução:"
+        systemctl list-units --type=service --state=running | grep proxy-
+        read -p "Digite o número do serviço a ser reiniciado: " service_number
+        systemctl restart proxy-$service_number
+        echo "Serviço proxy-$service_number reiniciado."
         ;;
         4)
-            systemctl list-units --type=service --state=running | grep proxy-
+        systemctl list-units --type=service --state=running | grep proxy-
         ;;
         5)
-            echo "Desinstalando o proxy antes de reinstalar..."
-            uninstall_proxy
-            install_proxy
+        echo "Desinstalando o proxy antes de reinstalar..."
+        uninstall_proxy
+        install_proxy
         ;;
         6)
-            uninstall_proxy
+        uninstall_proxy
         ;;
-        7)
-            echo "Saindo."
-            break
+        0)
+        echo "Saindo."
+        menu
         ;;
         *)
-            echo "Opção inválida. Escolha uma opção válida."
+        echo "Opção inválida. Escolha uma opção válida."
         ;;
     esac
     
