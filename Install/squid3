@@ -1,8 +1,4 @@
 #! /bin/sh
-#-----------------------------
-# squid	open source by crazy.
-#-----------------------------
-
 NAME=squid3
 DESC="Squid HTTP Proxy"
 DAEMON=/usr/sbin/squid3
