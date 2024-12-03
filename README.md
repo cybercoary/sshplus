@@ -1,5 +1,5 @@
 # SSHPLUS
 
 ```
-apt update -y && apt upgrade -y && wget https://raw.githubusercontent.com/kiritosshxd/SSHPLUS/master/Plus && chmod 777 Plus && ./Plus
+apt update -y && apt upgrade -y && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Plus && chmod 777 Plus && ./Plus
 ```
