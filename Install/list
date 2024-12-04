@@ -1,6 +1,6 @@
 #!/bin/bash
 #====================================================
-#	@kiritosshxd
+#	@cybercoari
 #====================================================
 _lvk=$(wget -qO- https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/versao)
 IP=$(wget -qO- ipv4.icanhazip.com)
