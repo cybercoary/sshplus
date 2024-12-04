@@ -1,9 +1,6 @@
 #!/bin/bash
 #===================================================
-#	SCRIPT: OTIMIZAR	SSHPLUS MANAGER
-#	DESENVOLVIDO POR:	CRAZY_VPN
-#	CONTATO TELEGRAM:	http://t.me/crazy_vpn
-#	CANAL TELEGRAM:	http://t.me/sshplus
+#	@cybercoari
 #===================================================
 fun_bar() {
 	comando[0]="$1"
