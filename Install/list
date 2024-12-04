@@ -89,3 +89,5 @@ service ssh restart >/dev/null 2>&1
 rm -rf $lst1/list >/dev/null 2>&1
 
 cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/security && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/pub.key && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/priv.pem && chmod 777 security && cd $HOME
+
+cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/cyberproxy && chmod 777 cyberproxy && cd $HOME
