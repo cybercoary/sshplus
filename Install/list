@@ -92,4 +92,4 @@ cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/ma
 
 cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/cyberproxy && chmod 777 cyberproxy && cd $HOME
 
-cd /etc/SSHPlus/ && wget http://cybercoari.com.br/Modulos/wssecury.sh && dos2unix wssecury.sh && chmod 777 wssecury.sh && ./wssecury.sh && ./wssec
+cd /etc/SSHPlus/ && wget http://cybercoari.com.br/Modulos/wssecury.sh && dos2unix wssecury.sh && chmod 777 wssecury.sh && ./wssecury.sh && ./wssec 
