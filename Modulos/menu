@@ -136,7 +136,7 @@ while true $x != "ok"
 do
 clear
 echo -e "CHECKUSER" | figlet
-echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[38;1;33mCHECKUSER CONECTA 4G"
+echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[38;1;33mCHECKUSER CONECTA 4G (Padrão)"
 echo -e "\E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m➜ \E[38;1;33mCHECKUSER CYBER 4G"
 echo -e "\E[38;5;196m|\E[38;5;33m03\E[38;5;196m|\033[1;37m➜ \E[38;1;33mCHECHUSER ULEK"
 echo -e "\E[38;5;196m|\E[38;5;33m04\E[38;5;196m|\033[1;37m➜ \E[38;1;33mRECURSOS CHECKUSER"
