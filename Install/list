@@ -1,5 +1,8 @@
-
-_lvk=$(wget -qO- https://raw.githubusercontent.com/cybercoary/sshplus/main/versao)
+#!/bin/bash
+#====================================================
+#	@cybercoari
+#====================================================
+_lvk=$(wget -qO- https://raw.githubusercontent.com/cybercoary/sshplus/Modulos/versao)
 IP=$(wget -qO- ipv4.icanhazip.com)
 IP2=$(wget -qO- http://whatismyip.akamai.com/)
 [[ "$IP" != "$IP2" ]] && ipdovps="$IP2" || ipdovps="$IP"
@@ -12,6 +15,7 @@ dpkg-reconfigure --frontend noninteractive tzdata >/dev/null 2>&1
 	rm -rf $_Ink/list >/dev/null 2>&1 && cat /dev/null >~/.bash_history && history -c && exit 0
 }
 [[ ! -d /etc/SSHPlus ]] && mkdir /etc/SSHPlus
+[[ ! -d /etc/SSHPlus/v2ray ]] && mkdir /etc/SSHPlus/v2ray
 [[ ! -d /etc/SSHPlus/senha ]] && mkdir /etc/SSHPlus/senha
 [[ ! -e /etc/SSHPlus/Exp ]] && touch /etc/SSHPlus/Exp
 [[ ! -d /etc/SSHPlus/userteste ]] && mkdir /etc/SSHPlus/userteste
@@ -21,9 +25,10 @@ dpkg-reconfigure --frontend noninteractive tzdata >/dev/null 2>&1
 [[ ! -d /etc/bot/arquivos ]] && mkdir /etc/bot/arquivos
 [[ ! -d /etc/bot/revenda ]] && mkdir /etc/bot/revenda
 [[ ! -d /etc/bot/suspensos ]] && mkdir /etc/bot/suspensos
+[[ ! -d /etc/rec ]] && mkdir /etc/rec
 [[ ! -e /etc/bot/lista_ativos ]] && touch /etc/bot/lista_ativos
 [[ ! -e /etc/bot/lista_suspensos ]] && touch /etc/bot/lista_suspensos
-echo -e 'by: @donomodderajuda' >/usr/lib/sshplus && cat /usr/lib/sshplus >$lst2/licence && cat /usr/lib/sshplus > /etc/SSHPlus/.tmp/crazy
+echo -e 'by: @KIRITO_SSH' >/usr/lib/sshplus && cat /usr/lib/sshplus >$lst2/licence && cat /usr/lib/sshplus > /etc/SSHPlus/.tmp/crazy
 netstat -nplt | grep -w 'apache2' | grep -w '80' && sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf && service apache2 restart
 [[ "$(grep -o '#Port 22' /etc/ssh/sshd_config)" == "#Port 22" ]] && sed -i "s;#Port 22;Port 22;" /etc/ssh/sshd_config && service ssh restart
 grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
@@ -31,10 +36,10 @@ echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
 _dir1='/bin'
 _dir2='/etc/SSHPlus'
 rm $_dir2/ShellBot.sh $_dir2/cabecalho $_dir2/open.py $_dir2/proxy.py $_dir2/wsproxy.py >/dev/null 2>&1
-_mdls=("alterarsenha" "criarusuario" "expcleaner" "mudardata" "remover" "criarteste" "verifbot" "droplimiter" "versao" "attscript" "alterarlimite" "ajuda" "sshmonitor" "badvpn" "userbackup" "instsqd" "blockt" "otimizar" "menu" "speedtest" "banner" "senharoot" "reiniciarservicos" "reiniciarsistema" "attscript" "conexao" "delscript" "detalhes" "botssh" "infousers" "onlineapp" "inst-botteste" "verifatt" "limiter" "uexpired" "cabecalho" "bot" "open.py" "proxy.py" "wsproxy.py" "security" "swapmemory" "websocket.sh" "blockuser" "multi" "tcptweaker.sh" "blockuser" "trojan-go" "blocksite" "initcheck" "instcheck" "slowdns")
+_mdls=("addhost" "ajuda" "alterarlimite" "alterarsenha" "apache2menu" "autoreboot.sh" "tcptweaker.sh" "checkers" "utili" "multi" "check" "chuser" "cyberproxy" "limit" "rps_cpu" "attscript" "Autobackup" "backup_mail.sh" "badvpn" "banner" "bashtop" "ddos" "blocksite" "blockt" "blockuser" "bot" "botssh" "cabecalho" "conexao" "criarteste" "criarusuario" "delhost" "delscript" "detalhes" "dns-netflix.sh" "droplimiter" "expcleaner" "ban.sh" "fr" "GoLang.sh" "infousers" "inst-botteste" "initcheck" "instsqd" "limiter" "mainproxy" "menu" "mp.py" "menub2" "menuudp" "mudardata" "mtuning" "multi" "onlineapp" "open.py" "otimizar" "painelv2ray" "prissh" "prnet.sh" "proxy" "proxy.py" "psiphon.sh" "reiniciarservicos" "reiniciarsistema" "remover" "senharoot" "ShellBot.sh" "slowdns" "speedtest" "stunnel5" "sshmonitor" "suspenderusuario.sh" "swapmemory" "ssh.sh" "trafegototal" "trojan-go" "uexpired" "userbackup" "velocity" "verifatt" "verifbot" "v2ray2024" "v2raymanager" "webmin.sh" "websocket.sh" "wireguard.sh" "wsproxy.py" "pkill.sh")
 for _arq in ${_mdls[@]}; do
 	[[ -e $_dir1/$_arq ]] && rm $_dir1/$_arq >/dev/null 2>&1
-	wget -c -P $_dir1 https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/$_arq
+	wget -c -P $_dir1 https://raw.githubusercontent.com/cybercoary/sshplus/Modulos/$_arq
 	chmod +x $_dir1/$_arq
 done
 mv $_dir1/cabecalho $_dir1/bot $_dir1/open.py $_dir1/proxy.py $_dir1/wsproxy.py $_dir2
@@ -57,7 +62,7 @@ clear
 #INICIO AUTOMATICO' >/etc/autostart
 	chmod +x /etc/autostart
 } || {
-	[[ $(ps x | grep "bot_plus" | grep -v grep | wc -l) != '0' ]] && wget -qO- https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/ShellBot.sh
+	[[ $(ps x | grep "bot_plus" | grep -v grep | wc -l) != '0' ]] && wget -qO- https://raw.githubusercontent.com/cybercoary/sshplus/Install/ShellBot.sh
 	for proc in $(ps x | grep 'dmS' | grep -v 'grep' | awk {'print $1'}); do
 		screen -r -S "$proc" -X quit	
 done
@@ -76,15 +81,17 @@ crontab -r >/dev/null 2>&1
 	echo "0 */6 * * * /bin/uexpired"
 ) | crontab -
 echo "$_lvk" | sed -n '1 p' | cut -d' ' -f2 >/bin/versao && cat /bin/versao >/home/sshplus
-wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/jq-linux64 >/dev/null 2>&1
+wget https://raw.githubusercontent.com/cybercoary/sshplus/Install/jq-linux64 >/dev/null 2>&1
 chmod +x jq-linux64 && mv jq-linux64 $(which jq)
 service cron restart >/dev/null 2>&1
 service ssh restart >/dev/null 2>&1
 [[ -d /var/www/html/openvpn ]] && service apache2 restart >/dev/null 2>&1
 rm -rf $lst1/list >/dev/null 2>&1
-mkdir /opt/sshplus
-echo > /opt/sshplus/sshplus
-cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/security && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/pub.key && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/priv.pem && chmod 777 security && cd $HOME
+cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/Modulos/proxydt && chmod 777 proxydt && cd $HOME
+cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/Modulos/cyberproxy && chmod 777 cyberproxy && cd $HOME
 
-cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/cyberproxy && chmod 777 cyberproxy && cd $HOME
+cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/Modulos/mainproxy && chmod 777 mainproxy && cd $HOME
 
+cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/Install/security && wget https://raw.githubusercontent.com/cybercoary/sshplus/Install/pub.key && wget https://raw.githubusercontent.com/cybercoary/sshplus/Install/priv.pem && chmod 777 security && cd $HOME
+
+cd /etc/SSHPlus/ && wget http://raw.githubusercontent.com/cybercoary/sshplus/Modulos/wssecury.sh && dos2unix wssecury.sh && chmod 777 wssecury.sh && ./wssecury.sh && ./wssec 
