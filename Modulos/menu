@@ -144,9 +144,9 @@ echo -e "\E[38;5;196m|\E[38;5;33m00\E[38;5;196m|\033[1;37m➜ \E[38;1;33mMENU"
 echo ""
 echo -ne "\033[1;32mO QUE VOCE DESEJA FAZER \033[1;37m?\033[1;31m?\033[1;37m : "; read x
 case "$x" in 
-     1 | 01)
-     initcheck
-     ;;
+  1 | 01)
+  initcheck
+  ;;
 	2 | 02)
 	bash <(wget -qO- https://raw.githubusercontent.com/cybercoary/checkuser/main/install.sh) && iniciar
 	;;
