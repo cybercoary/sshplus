@@ -422,7 +422,7 @@ msg17='\033[1;37m\033[1;33m(Sem imformação - Para Cancelar Digite CRTL + C)\03
     fi
     unset PID_GEN
     PID_GEN=$(ps x|grep -v grep|grep "limv2ray")
-    [[ ! $PID_GEN ]] && PID_GEN="\e[91m ✕  " || PID_GEN="\e[92m ✓  "
+    [[ ! $PID_GEN ]] && PID_GEN="\e[91m ○  " || PID_GEN="\e[92m ◉  "
     statgen="$(echo $PID_GEN)"
     clear 
     clear
@@ -451,7 +451,7 @@ msg17='\033[1;37m\033[1;33m(Sem imformação - Para Cancelar Digite CRTL + C)\03
     }
 
     PID_GEN=$(ps x|grep -v grep|grep "limv2ray")
-    [[ ! $PID_GEN ]] && PID_GEN="\e[91m✕  " || PID_GEN="\e[92m✓  "
+    [[ ! $PID_GEN ]] && PID_GEN="\e[91m○  " || PID_GEN="\e[92m◉  "
     statgen="$(echo $PID_GEN)"
     #SPR & 
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -470,12 +470,12 @@ msg17='\033[1;37m\033[1;33m(Sem imformação - Para Cancelar Digite CRTL + C)\03
 			fi`;
             echo -e "\033[1;32mSERVICO: \033[1;33mV2RAY \033[1;32m$xv2ray1\033[1;37m" 
 			xv2ray=`if netstat -tunlp |grep v2ray 1> /dev/null 2> /dev/null; then
-			echo -e "\033[1;32m✓ "
+			echo -e "\033[1;32m◉ "
 			else
-			echo -e "\033[1;31m✕ "
+			echo -e "\033[1;31m○ "
 			fi`;          
 			echo -e "\033[0;34m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
-			echo -e "\033[0;34m┃\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;37mINSTALAR V2RAY $xv2ray                 \033[0;34m┃"
+			echo -e "\033[0;34m┃\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mINSTALAR V2RAY $xv2ray                 \033[0;34m┃"
 			echo -e "\033[0;34m┃\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;37mALTERAR PROTOCOLO                 \033[0;34m┃"
 			echo -e "\033[0;34m┃\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;37mATIVAR TLS                        \033[0;34m┃"
 			echo -e "\033[0;34m┃\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;37mALTERAR PORTA V2RAY               \033[0;34m┃"
