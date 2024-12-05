@@ -57,7 +57,7 @@ SCOLOR='\033[0m'
 			slowdns
 		} || {
 			cd $HOME
-			wget https://raw.githubusercontent.com/modderajuda/donomodderajuda/main/S/install -o /dev/null
+			wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Sistema/install -o /dev/null
 			chmod 777 install
 			./install
 		}
@@ -469,7 +469,7 @@ fun_squid
 	fun_v2rayins() {
 		clear
 		v2rayinst() {
-			source <(curl -sL https://raw.githubusercontent.com/modderajuda/donomodderajuda/main/M/v2ray)
+			source <(curl -sL https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/v2ray)
 			sleep 6
 		}
 		if netstat -tunlp | grep v2ray 1>/dev/null 2>/dev/null; then
@@ -775,7 +775,7 @@ clear
 					#cat cert.pem key.pem >>/etc/stunnel/stunnel.pem
 					#rm key.pem cert.pem >/dev/null 2>&1
 					sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
-					cd /etc/stunnel && wget https://raw.githubusercontent.com/modderajuda/donomodderajuda/main/I/stunnel.pem && cd $HOME
+					cd /etc/stunnel && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/stunnel.pem && cd $HOME
 				}
 				fun_bar 'ssl_certif'
 				echo -e "\n\033[1;32mINICIANDO O SSL TUNNEL !\033[0m"
@@ -1271,9 +1271,9 @@ echo "Execulte como root"
 			# Adquirindo easy-rsa
 			echo ""
 			fun_dep() {
-				wget -O ~/EasyRSA-3.0.1.tgz "https://raw.githubusercontent.com/modderajuda/donomodderajuda/main/I/EasyRSA-3.0.1.tgz"
+				wget -O ~/EasyRSA-3.0.1.tgz "https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/EasyRSA-3.0.1.tgz"
 				[[ ! -e $HOME/EasyRSA-3.0.1.tgz ]] && {
-					wget -O ~/EasyRSA-3.0.1.tgz "https://raw.githubusercontent.com/modderajuda/donomodderajuda/main/I/EasyRSA-3.0.1.tgz"
+					wget -O ~/EasyRSA-3.0.1.tgz "https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/EasyRSA-3.0.1.tgz"
 				}
 				tar xzf ~/EasyRSA-3.0.1.tgz -C ~/
 				mv ~/EasyRSA-3.0.1/ /etc/openvpn/
@@ -1498,7 +1498,7 @@ echo -e "\033[0;34m┗━━━━━━━━━━━━━━━━━━━�
 		[[ $(screen -list | grep -wc 'openpy') != '0' ]] && sksop="\033[1;32m◉" || sksop="\033[1;31m○"
 		
 		echo -e "\033[0;34m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
-		echo -e "\033[0;34m┃\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[38;5;15mSOCKS SSH $var_sks1 \033[0m                       \033[0;34m┃"
+		echo -e "\033[0;34m┃\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[33;5;15mSOCKS SSH $var_sks1 \033[0m                       \033[0;34m┃"
 		echo -e "\033[0;34m┃\E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m➜ \E[38;5;15mWEBSOCKET $var_sks2 \033[0m                       \033[0;34m┃"
 		echo -e "\033[0;34m┃\E[38;5;196m|\E[38;5;33m03\E[38;5;196m|\033[1;37m➜ \E[38;5;15mWEBSOCKET SECURITY $var_sks3 \033[0m              \033[0;34m┃"
 		echo -e "\033[0;34m┃\E[38;5;196m|\E[38;5;33m04\E[38;5;196m|\033[1;37m➜ \E[38;5;15mPROXY DT $var_sks4 \033[0m                        \033[0;34m┃"
