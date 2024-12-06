@@ -36,7 +36,7 @@ echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
 _dir1='/bin'
 _dir2='/etc/SSHPlus'
 rm $_dir2/ShellBot.sh $_dir2/cabecalho $_dir2/open.py $_dir2/proxy.py $_dir2/wsproxy.py >/dev/null 2>&1
-_mdls=("addhost" "ajuda" "alterarlimite" "alterarsenha" "attscript" addhost" "ajuda" "alterarlimite" "alterarsenha" "apache2menu" "attscript" "badvpn" "banner" "bot" "botssh" "cabecalho" "criarteste" "criarusuario" "conexao" "delhost" "delscript" "detalhes" "blockt" "droplimiter" "expcleaner" "infousers" "initbot" "initcheck" "instsqd" "limiter" "menu" "mudardata" "onlineapp" "open.py" "otimizar" "pkill.sh" "proxy.py" "remover" "reiniciarservicos" "reiniciarsistema" "senharoot" "ssh.sh" "sshmonitor" "speedtest" "swapmemory" "trojan-go" "uexpired" "userbackup" ""velocity" "verifatt" "verifbot" "wsproxy.py")
+_mdls=("addhost" "ajuda" "alterarlimite" "alterarsenha" "attscript" addhost" "ajuda" "alterarlimite" "alterarsenha" "apache2menu" "attscript" "badvpn" "banner" "bot" "botssh" "cabecalho" "criarteste" "criarusuario" "conexao" "delhost" "delscript" "detalhes" "blockt" "droplimiter" "expcleaner" "infousers" "initbot" "initcheck" "instsqd" "limiter" "menu" "mudardata" "onlineapp" "open.py" "otimizar" "pkill.sh" "proxy.py" "remover" "reiniciarservicos" "reiniciarsistema" "senharoot" "ssh.sh" "sshmonitor" "speedtest" "swapmemory" "trafegototal" "trojan-go" "uexpired" "userbackup" "velocity" "verifatt" "verifbot" "wsproxy.py")
 for _arq in ${_mdls[@]}; do
 	[[ -e $_dir1/$_arq ]] && rm $_dir1/$_arq >/dev/null 2>&1
 	wget -c -P $_dir1 https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/$_arq
