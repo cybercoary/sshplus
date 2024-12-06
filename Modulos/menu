@@ -137,9 +137,6 @@ do
 clear
 echo -e "CHECKUSER" | figlet
 echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[38;1;33mCHECKUSER CONECTA 4G (Padrão)"
-echo -e "\E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m➜ \E[38;1;33mCHECKUSER CYBER 4G"
-echo -e "\E[38;5;196m|\E[38;5;33m03\E[38;5;196m|\033[1;37m➜ \E[38;1;33mCHECHUSER ULEK"
-echo -e "\E[38;5;196m|\E[38;5;33m04\E[38;5;196m|\033[1;37m➜ \E[38;1;33mRECURSOS CHECKUSER"
 echo -e "\E[38;5;196m|\E[38;5;33m00\E[38;5;196m|\033[1;37m➜ \E[38;1;33mMENU"
 echo ""
 echo -ne "\033[1;32mO QUE VOCE DESEJA FAZER \033[1;37m?\033[1;31m?\033[1;37m : "; read x
@@ -147,21 +144,11 @@ case "$x" in
   1 | 01)
   initcheck
   ;;
-	2 | 02)
-	bash <(wget -qO- https://raw.githubusercontent.com/cybercoary/checkuser/main/install.sh) && iniciar
-	;;
-	3 | 03)
-	bash <(wget -qO- https://raw.githubusercontent.com/UlekBR/ApiUlekCheckUser/main/install.sh) && apiUlekCheckuser
-	;;
-	4 | 04)
-    clear
-	fixchk
-	;;
-    0 | 00)
-    menu
-    clear
-    ;;
-    *)
+  0 | 00)
+  menu
+  clear
+  ;;
+  *)
    echo -e "\n\033[1;31mOpcao invalida !\033[0m"
    sleep 2
 esac
