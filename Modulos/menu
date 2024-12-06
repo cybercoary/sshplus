@@ -136,7 +136,7 @@ while true $x != "ok"
 do
 clear
 echo -e "CHECKUSER" | figlet
-echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[38;1;33mCHECKUSER CONECTA 4G (Padrão)"
+echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[38;1;33mCHECKUSER CONECTA4G"
 echo -e "\E[38;5;196m|\E[38;5;33m00\E[38;5;196m|\033[1;37m➜ \E[38;1;33mMENU"
 echo ""
 echo -ne "\033[1;32mO QUE VOCE DESEJA FAZER \033[1;37m?\033[1;31m?\033[1;37m : "; read x
@@ -162,7 +162,7 @@ clear
 echo -e "\033[0;31m┏═════════════════════════════════════════┓\033[0m"
 echo -e "\033[0;31m║\E[44;1;37m                FERRAMENTAS              \E[0m\033[0;31m║"
 echo -e "\033[0;31m┗═════════════════════════════════════════┛\033[0m"
-echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[38;1;33mSINCRONIZACAO PAINEL ATLAS"
+echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[38;1;33mSINCRONIZACAO PAINEL WEB"
 echo -e "\E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m➜ \E[38;1;33mATUALIZAR CERTIFICADO SSL"
 echo -e "\E[38;5;196m|\E[38;5;33m03\E[38;5;196m|\033[1;37m➜ \E[38;1;33mTRAFEGO TOTAL"
 echo -e "\E[38;5;196m|\E[38;5;33m04\E[38;5;196m|\033[1;37m➜ \E[38;1;33mMENU APACHE"
