@@ -556,7 +556,7 @@ case "$x" in
    ;;
    18)
    clear
-   mp
+   velocity
    echo -ne "\n\033[1;31mENTER \033[1;37mpara retornar ao \033[1;32mMENU!\033[0m"; read
    ;;
    19)
