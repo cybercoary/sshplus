@@ -13,7 +13,7 @@ echo " BLOQUEAR E DESBLOQUEAR USUÁRIO TEMPORARIAMENTE "
 echo -e "\n"
 echo -e "\033[01;34m===================================================="
 echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m \E[38;1;33mBLOQUEAR USUÁRIO \033[0;31m"
-echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m03\E[38;5;196m|\033[1;37m \E[38;1;33mDESBLOQUEAR USUÁRIO \033[0;31m"
+echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m \E[38;1;33mDESBLOQUEAR USUÁRIO \033[0;31m"
 echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m00\E[38;5;196m|\033[1;37m \E[38;1;33mVOLTAR \033[0;31m"
 echo -e "\033[01;34m===================================================="
 echo -ne "\033[1;37mO QUE VC DESEJA FAZER ??\033[1;37m: "; read op
