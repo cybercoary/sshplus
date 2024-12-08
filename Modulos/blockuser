@@ -8,12 +8,23 @@ clear
 clear
 while [  "$op"  !=  "3" ]
 do
-echo -e "\E[44;1;37m             BLOCK TEMPORARY USER            \E[0m"
+echo -e "\E[44;1;37m             BLOQUEAR USUÁRIO TEMPORARIAMENTE            \E[0m"
 echo " BLOQUEAR E DESBLOQUEAR USUÁRIO TEMPORARIAMENTE "
 echo -e "\n"
 echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m \E[38;1;33mBLOQUEAR USUÁRIO \033[0;31m"
 echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m \E[38;1;33mDESBLOQUEAR USUÁRIO \033[0;31m"
 echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m00\E[38;5;196m|\033[1;37m \E[38;1;33mVOLTAR \033[0;31m"
+echo -e "\033[01;34m===================================================="
+
+echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m \E[38;1;33mBLOQUEAR SITE         \E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m \E[38;1;33mLISTA BLOQUEADA \033[0;31m"
+
+echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m03\E[38;5;196m|\033[1;37m \E[38;1;33mDESBLOQUEAR SITES     \E[38;5;196m|\E[38;5;33m04\E[38;5;196m|\033[1;37m \E[38;1;33mDESBLOQUEAR TODOS OS SITES\033[0;31m"
+
+echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m00\E[38;5;196m|\033[1;37m \E[38;1;33mVOLTAR \033[0;31m"
+
+echo -e "\033[01;34m===================================================="
+
+echo -ne "\033[1;37mO QUE VC DESEJA FAZER ??\033[1;37m: "; read opcao
 
 read op
 case $op in
