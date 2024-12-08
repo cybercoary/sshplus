@@ -109,11 +109,7 @@ tput setaf 2 ; tput bold ; printf '%s' "|*|"; tput setaf 7 ; printf '%s' " { BLO
 
 echo -e "\033[01;34m===================================================="
 
-echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m \E[38;1;33mBLOQUEAR SITE              \E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m \E[38;1;33mLISTA BLOQUEADA \033[0;31m"
-
-tput setaf 7 ; tput bold ; printf '%s' "[ 01 ] >"; tput setaf 3 ; printf '%s' " BLOQUEAR SITE."  ; echo ""
-
-tput setaf 7 ; tput bold ; printf '%s' "[ 02 ] >"; tput setaf 3 ; printf '%s' " VOLTAR AO MENU."  ; echo ""
+echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m \E[38;1;33mBLOQUEAR SITE         \E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m \E[38;1;33mVOLTA \033[0;31m"
 
 echo -e "\033[01;34m===================================================="
 
@@ -233,9 +229,7 @@ tput setaf 2 ; tput bold ; printf '%s' "|*|"; tput setaf 7 ; printf '%s' " { DES
 
 echo -e "\033[01;34m===================================================="
 
-tput setaf 7 ; tput bold ; printf '%s' "[01]"; tput setaf 3 ; printf '%s' " DESBLOQUEAR SITE."  ; echo ""
-
-tput setaf 7 ; tput bold ; printf '%s' "[02]"; tput setaf 3 ; printf '%s' " VOLTAR AO MENU."  ; echo ""
+echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m \E[38;1;33mDESBLOQUEAR SITE         \E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m \E[38;1;33mVOLTA \033[0;31m"
 
 echo -e "\033[01;34m===================================================="
 
@@ -393,9 +387,7 @@ tput setaf 2 ; tput bold ; printf '%s' "|*|"; tput setaf 7 ; printf '%s' " { DES
 
 echo -e "\033[01;34m===================================================="
 
-tput setaf 7 ; tput bold ; printf '%s' "[01]"; tput setaf 3 ; printf '%s' " DESBLOQUEAR TODOS OS SITE."  ; echo ""
-
-tput setaf 7 ; tput bold ; printf '%s' "[02]"; tput setaf 3 ; printf '%s' " VOLTAR AO MENU."  ; echo ""
+echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m \E[38;1;33mDESBLOQUEAR TODOS OS SITE         \E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m \E[38;1;33mVOLTA \033[0;31m"
 
 echo -e "\033[01;34m===================================================="
 
