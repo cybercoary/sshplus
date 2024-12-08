@@ -11,9 +11,11 @@ do
 echo -e "\E[44;1;37m             BLOCK TEMPORARY USER            \E[0m"
 echo " BLOQUEAR E DESBLOQUEAR USUÁRIO TEMPORARIAMENTE "
 echo -e "\n"
+
 echo -e "\033[1;34m[\033[1;37m01\033[1;34m]\033[1;37m ➩ \033[1;33mBLOQUEAR USUÁRIO \033[0;32m"
 echo -e "\033[1;34m[\033[1;37m02\033[1;34m]\033[1;37m ➩ \033[1;33mDESBLOQUEAR USUÁRIO \033[1;37m"
 echo -e "\033[1;34m[\033[1;37m00\033[1;34m]\033[1;37m ➩ \033[1;33mSAIR \033[0;32m"
+echo -e "\033[0;31m\E[38;5;196m|\E[38;5;33m00\E[38;5;196m|\033[1;37m \E[38;1;33mVOLTAR \033[0;31m"
 
 read op
 case $op in
