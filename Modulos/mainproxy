@@ -5,7 +5,7 @@ install_proxy() {
     echo "Instalando o proxy..."
     {
         rm -f /usr/bin/proxy
-        curl -s -L -o /usr/bin/proxy https://cybercoari.com.br/Modulos/proxy
+        curl -s -L -o /usr/bin/proxy https://raw.githubusercontent.com/sshplus/main/Modulos/proxy
         chmod +x /usr/bin/proxy
     } > /dev/null 2>&1
     echo "Proxy instalado com sucesso."
