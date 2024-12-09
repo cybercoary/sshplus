@@ -55,7 +55,7 @@ configure_and_start_service() {
     RESPONSE=""
     
     if [[ $HTTP_OR_HTTPS == "H" || $HTTP_OR_HTTPS == "h" ]]; then
-        read -p "DIGITE STATUS DO PROXY DTUNNEL (--response): " RESPONSE
+        read -p "DIGITE STATUS DO CYBER PROXY (--response): " RESPONSE
     fi
     
     read -p "Você quer usar apenas SSH (Y/N)? [Y/N]: " SSH_ONLY
