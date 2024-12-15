@@ -1409,7 +1409,7 @@ fun_backauto() {
             mkdir /etc/SSHPlus/backups
             [[ $(crontab -l | grep -c "userbackup") = '0' ]] && (
                 crontab -l 2>/dev/null
-                echo "0 */0 * * * /bin/userbackup 1"
+                echo "0 */6 * * * /bin/userbackup 1"
             ) | crontab -
             s
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
@@ -2034,7 +2034,7 @@ ShellBot.InlineKeyboardButton --button 'menu1' --line 1 --text 'CRIAR USUARIO' -
 ShellBot.InlineKeyboardButton --button 'menu1' --line 2 --text 'CRIAR TESTE' --callback_data '_criarteste'
 ShellBot.InlineKeyboardButton --button 'menu1' --line 3 --text 'REMOVER' --callback_data '_deluser'
 ShellBot.InlineKeyboardButton --button 'menu1' --line 4 --text 'SUSPENDER USUARIO' --callback_data '_sususer'
-ShellBot.InlineKeyboardButton --button 'menu1' --line 5 --text 'ATIVAR SUSPENSO' --callback_data '_ativauser'
+ShellBot.InlineKeyboardButton --button 'menu1' --line 5 --text 'REMOVER SUSPENSO' --callback_data '_ativauser'
 ShellBot.InlineKeyboardButton --button 'menu1' --line 6 --text 'ALTERAR SENHA' --callback_data '_altsenha'
 ShellBot.InlineKeyboardButton --button 'menu1' --line 7 --text 'ALTERAR LIMITE' --callback_data '_altlimite'
 ShellBot.InlineKeyboardButton --button 'menu1' --line 8 --text 'ALTERAR DATA' --callback_data '_altdata'
@@ -2080,7 +2080,7 @@ ShellBot.InlineKeyboardButton --button 'menu2' --line 1 --text 'CRIAR USUARIO' -
 ShellBot.InlineKeyboardButton --button 'menu2' --line 1 --text 'CRIAR TESTE' --callback_data '_criarteste2'
 ShellBot.InlineKeyboardButton --button 'menu2' --line 2 --text 'REMOVER' --callback_data '_deluser2'
 ShellBot.InlineKeyboardButton --button 'menu2' --line 2 --text 'SUSPENDER USUARIO' --callback_data '_sususer2'
-ShellBot.InlineKeyboardButton --button 'menu2' --line 2 --text 'ATIVAR SUSPENSO' --callback_data '_ativauser2'
+ShellBot.InlineKeyboardButton --button 'menu2' --line 2 --text 'REMOVER SUSPENSO' --callback_data '_ativauser2'
 ShellBot.InlineKeyboardButton --button 'menu2' --line 2 --text 'USUARIOS ONLINE' --callback_data '_monitor2'
 ShellBot.InlineKeyboardButton --button 'menu2' --line 3 --text 'ALTERAR LIMITE' --callback_data '_altlimite2'
 ShellBot.InlineKeyboardButton --button 'menu2' --line 3 --text 'INFO USUARIOS' --callback_data '_verusers2'
