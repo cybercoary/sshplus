@@ -36,7 +36,7 @@ echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
 _dir1='/bin'
 _dir2='/etc/SSHPlus'
 rm $_dir2/ShellBot.sh $_dir2/cabecalho $_dir2/open.py $_dir2/proxy.py $_dir2/wsproxy.py >/dev/null 2>&1
-_mdls=("addhost" "ajuda" "alterarlimite" "alterarsenha" "apache2menu" "attscript" "badvpn" "banner" "bot" "botssh" "cabecalho" "criarteste" "criarusuario" "conexao" "cyberproxy" "ddos" "delhost" "delscript" "detalhes" "blocksite" "blockuser" "blockt" "droplimiter" "expcleaner" "infousers" "initbot" "initcheck" "instsqd" "inst-botteste" "limiter" "mainproxy" "menu" "mudardata" "onlineapp" "open.py" "otimizar" "pkill.sh" "proxy.py" "remover" "reiniciarservicos" "reiniciarsistema" "senharoot" "ssl.sh" "sshmonitor" "speedtest" "swapmemory" "trafegototal" "trojan-go" "uexpired" "userbackup" "v2raymanager" "velocity" "verifatt" "verifbot" "wsproxy.py")
+_mdls=("addhost" "ajuda" "alterarlimite" "alterarsenha" "apache2menu" "autoreboot.sh" "tcptweaker.sh" "checkers" "utili" "multi" "check" "chuser" "cyberproxy" "limit" "rps_cpu" "attscript" "Autobackup" "backup_mail.sh" "badvpn" "banner" "bashtop" "ddos" "blocksite" "blockt" "blockuser" "bot" "botssh" "cabecalho" "conexao" "criarteste" "criarusuario" "delhost" "delscript" "detalhes" "dns-netflix.sh" "droplimiter" "expcleaner" "ban.sh" "fr" "GoLang.sh" "infousers" "inst-botteste" "initcheck" "instsqd" "limiter" "mainproxy" "menu" "mp.py" "menub2" "menuudp" "mudardata" "mtuning" "multi" "onlineapp" "open.py" "otimizar" "painelv2ray" "prissh" "prnet.sh" "proxy" "proxy.py" "psiphon.sh" "reiniciarservicos" "reiniciarsistema" "remover" "senharoot" "ShellBot.sh" "slowdns" "speedtest" "stunnel5" "sshmonitor" "suspenderusuario.sh" "swapmemory" "ssl.sh" "trafegototal" "trojan-go" "uexpired" "userbackup" "velocity" "verifatt" "verifbot" "v2ray2024" "v2raymanager" "webmin.sh" "websocket.sh" "wireguard.sh" "wsproxy.py" "pkill.sh")
 for _arq in ${_mdls[@]}; do
 	[[ -e $_dir1/$_arq ]] && rm $_dir1/$_arq >/dev/null 2>&1
 	wget -c -P $_dir1 https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/$_arq
@@ -81,15 +81,17 @@ crontab -r >/dev/null 2>&1
 	echo "0 */6 * * * /bin/uexpired"
 ) | crontab -
 echo "$_lvk" | sed -n '1 p' | cut -d' ' -f2 >/bin/versao && cat /bin/versao >/home/sshplus
-wget https://github.com/cybercoary/sshplus/raw/main/Install/jq-linux64 >/dev/null 2>&1
+wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/jq-linux64 >/dev/null 2>&1
 chmod +x jq-linux64 && mv jq-linux64 $(which jq)
 service cron restart >/dev/null 2>&1
 service ssh restart >/dev/null 2>&1
 [[ -d /var/www/html/openvpn ]] && service apache2 restart >/dev/null 2>&1
 rm -rf $lst1/list >/dev/null 2>&1
-
-cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/security && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/pub.key && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/priv.pem && chmod 777 security && cd $HOME
-
+cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/proxydt && chmod 777 proxydt && cd $HOME
 cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/cyberproxy && chmod 777 cyberproxy && cd $HOME
 
-cd /etc/SSHPlus/ && wget http://cybercoari.com.br/Modulos/wssecury.sh && dos2unix wssecury.sh && chmod 777 wssecury.sh && ./wssecury.sh && ./wssec 
+cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/mainproxy && chmod 777 mainproxy && cd $HOME
+
+cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/security && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/pub.key && wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/priv.pem && chmod 777 security && cd $HOME
+
+cd /etc/SSHPlus/ && wget http://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/wssecury.sh && dos2unix wssecury.sh && chmod 777 wssecury.sh && ./wssecury.sh && ./wssec 
