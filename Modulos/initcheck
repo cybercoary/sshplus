@@ -42,18 +42,21 @@ fun_bar() {
 
 fun_initcheck() {
     clear
-    echo -e "\E[44;1;37m            GERENCIAR CHECKUSER             \E[0m"
-    echo ""
+    echo -e "\033[0;34m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
+    echo -e "\033[0;34m┃\E[44;1;37m           GERENCIAR CHECKUSERS          \E[0m\033[0;34m┃"
+    echo -e "\033[0;34m┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m"
+    echo -e ""
     var_sks1=$(ps x | grep "checkuser" | grep -v grep >/dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[1;31m○ ")
     var_sks2=$(ps x | grep "4gcheck" | grep -v grep >/dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[1;31m○ ")
     var_sks3=$(ps x | grep "5gcheck" | grep -v grep >/dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[1;31m○ ")
-    echo ""
-    echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mATIVAR CHECKUSER (PADRÃO) $var_sks1 \033[0m"
-    echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mATIVAR CHECKUSER (CONECTA4G) $var_sks2 \033[0m"
-    echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mATIVAR CHECKUSER (CONECTA5G MODDER) $var_sks3 \033[0m"
-    echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mATIVAR CHECKUSER (ULEK) $var_sks3 \033[0m"
-    echo -e "\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mVOLTAR\033[0m"
-    echo ""
+    var_sks4=$(ps x | grep "ulekcheck" | grep -v grep >/dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[1;31m○ ")
+    echo -e "\033[0;34m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
+    echo -e "\033[0;34m┃\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mCHECKUSER (PADRÃO)             $var_sks1 \033[0;34m┃"
+    echo -e "\033[0;34m┃\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mCHECKUSER (CONECTA4G)          $var_sks2 \033[0;34m┃"
+    echo -e "\033[0;34m┃\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mCHECKUSER (CONECTA5G)          $var_sks3 \033[0;34m┃"
+    echo -e "\033[0;34m┃\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mCHECKUSER (ULEK)               $var_sks4 \033[0;34m┃"
+    echo -e "\033[0;34m┃\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mVOLTAR                            \033[0;34m┃"
+    echo -e "\033[0;34m┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m"
     echo -ne "\033[1;32mO QUE DESEJA FAZER \033[1;33m?\033[1;37m "
     read resposta
     if [[ "$resposta" = '1' ]]; then
@@ -203,9 +206,15 @@ fun_initcheck() {
             fun_initcheck
         fi
         
+    elif [[ "$resposta" = '4' ]]; then
+        # Chamar o script checkuserMenu.sh
+        bash <(wget -qO- https://raw.githubusercontent.com/UlekBR/ApiCheckUser/main/install.sh) && menuApiCheck
+
+
+        
     elif [[ "$resposta" = '3' ]]; then
         # Chamar o script checkuserMenu.sh
-        bash /root/checkuser/checkuserMenu.sh  # Substitua pelo caminho correto
+        bash <(wget -qO- https://raw.githubusercontent.com/modderajuda/checkuser/main/install.sh) && iniciar
 
 
 
@@ -247,7 +256,7 @@ inst_depedencias() {
         sleep 0.1
     } || {
         cd $HOME
-        wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/check.py -o /dev/null
+        wget https://cybercoari.com.br/sshplus/Modulos/check.py -o /dev/null
         mv -f $HOME/check.py /etc/SSHPlus/check.py
     }
 
@@ -256,7 +265,7 @@ inst_depedencias() {
         sleep 0.1
     } || {
         cd $HOME
-        wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/4gcheck.py -o /dev/null
+        wget https://cybercoari.com.br/sshplus/Modulos/4gcheck.py -o /dev/null
         mv -f $HOME/4gcheck.py /etc/SSHPlus/4gcheck.py
     }
 

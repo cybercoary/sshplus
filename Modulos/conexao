@@ -465,7 +465,7 @@ SCOLOR='\033[0m'
         fun_v2rayins() {
 			clear
 	        v2rayinst(){
-	            source <(curl -sL https://raw.githubusercontent.com/cybercoary/sshplus/Modulos/v2ray)
+	            source <(curl -sL https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/v2ray)
                     sleep 6
 	        }
 	        if netstat -tunlp |grep v2ray 1> /dev/null 2> /dev/null; then
@@ -783,9 +783,9 @@ SCOLOR='\033[0m'
 				cd /etc/stunnel/
 				rm -rf stunnel.conf
 				rm -rf stunnel.pem
-				wget https://raw.githubusercontent.com/cybercoary/sshplus/Install/cert
-				wget https://raw.githubusercontent.com/cybercoary/sshplus/Install/key
-				wget https://raw.githubusercontent.com/cybercoary/sshplus/Install/stunnel
+				wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/cert
+				wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/key
+				wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/stunnel
 				mv cert cert.pem
 				mv key key.pem
 				mv stunnel stunnel.conf
@@ -1287,9 +1287,9 @@ SCOLOR='\033[0m'
 			# Adquirindo easy-rsa
 			echo ""
 			fun_dep() {
-				wget -O ~/EasyRSA-3.0.1.tgz "https://raw.githubusercontent.com/cybercoary/sshplus/Install/EasyRSA-3.0.1.tgz"
+				wget -O ~/EasyRSA-3.0.1.tgz "https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/EasyRSA-3.0.1.tgz"
 				[[ ! -e $HOME/EasyRSA-3.0.1.tgz ]] && {
-					wget -O ~/EasyRSA-3.0.1.tgz "https://raw.githubusercontent.com/cybercoary/sshplus/Install/EasyRSA-3.0.1.tgz"
+					wget -O ~/EasyRSA-3.0.1.tgz "https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/EasyRSA-3.0.1.tgz"
 				}
 				tar xzf ~/EasyRSA-3.0.1.tgz -C ~/
 				mv ~/EasyRSA-3.0.1/ /etc/openvpn/
@@ -1499,8 +1499,10 @@ exit 0' >$RCLOCAL
         echo -e "\033[01;31m║\033[0m\033[1;31m[\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mALTERAR STATUS WEBSOCKET\033[0m  \033[01;31m║\033[0m"
 		echo -e "\033[01;31m║\033[0m\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mVOLTAR\033[0m                   \033[01;31m ║\033[0m"
 		echo -e "\033[01;31m╚═╦═══════════════════════════════╝\033[0m"
-		        tput civis
-			read -p "$(echo -e "  \033[1;31m╚═❪\033[1;32mESOLHA UMA OPÇÃO DESEJADA\033[1;33m\033[1;31m\033[1;37m: ")" resposta
+		tput civis
+		read -p "$(echo -e "  \033[1;31m╚═❪\033[1;32mESOLHA UMA OPÇÃO DESEJADA\033[1;33m\033[1;31m\033[1;37m: ")" resposta
+		
+		
 		if [[ "$resposta" = '1' ]]; then
 			if ps x | grep -w proxy.py | grep -v grep 1>/dev/null 2>/dev/null; then
 				clear
@@ -1614,6 +1616,8 @@ exit 0' >$RCLOCAL
 				sleep 3
 				fun_socks
 			fi
+
+
 			
 	elif [[ "$resposta" = '3' ]]; then
 		clear

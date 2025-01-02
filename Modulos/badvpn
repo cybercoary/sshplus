@@ -9,7 +9,7 @@ clear
     else
         sleep 0.1
     fi
-    var_sks1=$(ps x | grep "udpvpn"|grep -v grep > /dev/null && echo -e "\033[1,32m◉ " || echo -e "\033[1;31m○ ")
+    var_sks1=$(ps x | grep "udpvpn"|grep -v grep > /dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[0;31m○ ")
     echo ""
     echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \033[1;33mATIVAR/DESATIVAR BADVPN(PADRÃO 7300) $var_sks1 \033[0m"
 	echo -e "\E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m➜ \033[1;33mATIVAR AS PORTAS BADVPN (7100-7900)\033[0m"
@@ -54,7 +54,7 @@ clear
 			clear
             inst_udp () {
                 cd $HOME
-                wget https://raw.githubusercontent.com/cybercoary/sshplus/Install/badvpn-udpgw -o /dev/null
+                wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Install/badvpn-udpgw -o /dev/null
                 mv -f $HOME/badvpn-udpgw /bin/badvpn-udpgw
                 chmod 777 /bin/badvpn-udpgw
             }
