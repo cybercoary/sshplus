@@ -10,10 +10,9 @@ clear
         sleep 0.1
     fi
     var_sks1=$(ps x | grep "udpvpn"|grep -v grep > /dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[0;31m○ ")
-    var_sks2=$(ps x | grep "udpvpn2"|grep -v grep > /dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[0;31m○ ")
     echo ""
     echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \033[1;33mATIVAR/DESATIVAR BADVPN(PADRÃO 7300) $var_sks1 \033[0m"
-	echo -e "\E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m➜ \033[1;33mATIVAR AS PORTAS BADVPN (7100-7900) $var_sks2 \033[0m"
+	echo -e "\E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m➜ \033[1;33mATIVAR AS PORTAS BADVPN (7100-7900) \033[0m"
     echo -e "\E[38;5;196m|\E[38;5;33m03\E[38;5;196m|\033[1;37m➜ \033[1;33mABRIR PORTA\033[0m"
     echo -e "\E[38;5;196m|\E[38;5;33m00\E[38;5;196m|\033[1;37m➜ \033[1;33mVOLTAR\033[0m"
     echo ""
