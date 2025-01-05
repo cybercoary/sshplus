@@ -1,4 +1,37 @@
 #!/usr/bin/env bash
+
+#-----------------------------------------------------------------------------------------------------------
+#	DATA:				07 de Março de 2017
+#	SCRIPT:				ShellBot.sh
+#	VERSÃO:				6.4.0
+#	DESENVOLVIDO POR:	Juliano Santos [SHAMAN]
+#	PÁGINA:				http://www.shellscriptx.blogspot.com.br
+#	FANPAGE:			https://www.facebook.com/shellscriptx
+#	GITHUB:				https://github.com/shellscriptx
+# 	CONTATO:			shellscriptx@gmail.com
+#
+#	DESCRIÇÃO:			ShellBot é uma API não-oficial desenvolvida para facilitar a criação de 
+#						bots na plataforma TELEGRAM. Constituída por uma coleção de métodos
+#						e funções que permitem ao desenvolvedor:
+#
+#							* Gerenciar grupos, canais e membros.
+#							* Enviar mensagens, documentos, músicas, contatos e etc.
+#							* Enviar teclados (KeyboardMarkup e InlineKeyboard).
+#							* Obter informações sobre membros, arquivos, grupos e canais.
+#							* Para mais informações consulte a documentação:
+#							  
+#							https://github.com/shellscriptx/ShellBot/wiki
+#
+#						O ShellBot mantém o padrão da nomenclatura dos métodos registrados da
+#						API original (Telegram), assim como seus campos e valores. Os métodos
+#						requerem parâmetros e argumentos para a chamada e execução. Parâmetros
+#						obrigatórios retornam uma mensagem de erro caso o argumento seja omitido.
+#					
+#	NOTAS:				Desenvolvida na linguagem Shell Script, utilizando o interpretador de 
+#						comandos BASH e explorando ao máximo os recursos built-in do mesmo,
+#						reduzindo o nível de dependências de pacotes externos.
+#-----------------------------------------------------------------------------------------------------------
+
 [[ $_SHELLBOT_SH_ ]] && return 1
 
 if ! awk 'BEGIN { exit ARGV[1] < 4.3 }' ${BASH_VERSINFO[0]}.${BASH_VERSINFO[1]}; then
