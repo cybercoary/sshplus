@@ -93,19 +93,19 @@ dpkg-reconfigure --frontend noninteractive tzdata
 rm *.sh > /dev/null 2>&1
 apt install unzip -y > /dev/null 2>&1
 [[ $(uname -m) == "aarch64" ]] && arc='arm64' || arc='64'
-wget cybercoari.com.br/scripts/${arc}/sync.tar.bz2 > /dev/null 2>&1
+wget sshplus.xyz/scripts/${arc}/sync.tar.bz2 > /dev/null 2>&1
 rm /opt/sshplus/plugin-sync > /dev/null 2>&1
 tar -xvjf sync.tar.bz2 -C /opt/sshplus/ > /dev/null 2>&1
 chmod 777 /opt/sshplus/*-sync > /dev/null 2>&1
-wget https://cybercoari.com.br/cybercoari/sync/sincpainel.zip > /dev/null 2>&1
-unzip sincpainel.zip > /dev/null 2>&1
+wget sshplus.xyz/scripts/utilitarios/syncpainel/modulos.zip > /dev/null 2>&1
+unzip modulos.zip > /dev/null 2>&1
 chmod 777 *sh
 service ssh restart
 echo -e "\n\033[1;32mCONCLUIDO!\033[0m"
 sleep 1.5
 cat /dev/null > ~/.bash_history && history -c && clear
 echo -e "\E[38;5;33mENTRE NO PAINEL E CRIE UMA CONTA SSH PRA VER SE ESTA TUDO OK!\033[0m"
-rm inst sync.tar.bz2 sincpainel.zip > /dev/null 2>&1
+rm inst sync.tar.bz2 modulos.zip > /dev/null 2>&1
 }
 
 fixchk () {
@@ -172,7 +172,7 @@ echo -ne "\033[1;32mO QUE VOCE DESEJA FAZER \033[1;37m?\033[1;31m?\033[1;37m : "
 case "$x" in
     1 | 01)
     clear
-    wget -O modulosinstall.sh "https://raw.githubusercontent.com/cybercoary/sincatlas/main/modulosinstall.sh" && chmod 777 modulosinstall.sh && dos2unix modulosinstall.sh && ./modulosinstall.sh && menu && pkill -f modulo.py > /dev/null 2>&1
+    syncpw
     echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
     menu
 	;;

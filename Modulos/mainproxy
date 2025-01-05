@@ -5,7 +5,7 @@ install_proxy() {
     echo "Instalando o proxy..."
     {
         rm -f /usr/bin/proxy
-        curl -s -L -o /usr/bin/proxy https://raw.githubusercontent.com/sshplus/main/Modulos/proxy
+        curl -s -L -o /usr/bin/proxy https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/proxy
         chmod +x /usr/bin/proxy
     } > /dev/null 2>&1
     echo "Proxy instalado com sucesso."
@@ -55,7 +55,7 @@ configure_and_start_service() {
     RESPONSE=""
     
     if [[ $HTTP_OR_HTTPS == "H" || $HTTP_OR_HTTPS == "h" ]]; then
-        read -p "DIGITE STATUS DO CYBER PROXY (--response): " RESPONSE
+        read -p "DIGITE STATUS DO PROXY DTUNNEL (--response): " RESPONSE
     fi
     
     read -p "Você quer usar apenas SSH (Y/N)? [Y/N]: " SSH_ONLY
@@ -153,9 +153,7 @@ while true; do
     echo -e "\033[1;34m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
     echo -e "\033[1;34m┃\033[1;41m\033[1;32m          CYBERPROXY          \033[0m\033[1;34m┃"
     echo -e "\033[1;34m┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫\033[0m"
-
     show_ports_in_use
-    
     echo -e "\033[1;34m┃\033[1;36m[\033[1;32m01\033[1;36m] \033[1;32m• \033[1;33mABRIR PORTA            \033[1;34m┃"
     echo -e "\033[1;34m┃\033[1;36m[\033[1;32m02\033[1;36m] \033[1;32m• \033[1;33mFECHAR PORTA           \033[1;34m┃"
     echo -e "\033[1;34m┃\033[1;36m[\033[1;32m03\033[1;36m] \033[1;32m• \033[1;33mREINICIAR PORTA        \033[1;34m┃"
