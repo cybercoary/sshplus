@@ -256,7 +256,7 @@ inst_depedencias() {
         sleep 0.1
     } || {
         cd $HOME
-        wget https://cybercoari.com.br/sshplus/Modulos/check.py -o /dev/null
+        wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/check.py -o /dev/null
         mv -f $HOME/check.py /etc/SSHPlus/check.py
     }
 
@@ -265,7 +265,7 @@ inst_depedencias() {
         sleep 0.1
     } || {
         cd $HOME
-        wget https://cybercoari.com.br/sshplus/Modulos/4gcheck.py -o /dev/null
+        wget https://raw.githubusercontent.com/cybercoary/sshplus/main/Modulos/4gcheck.py -o /dev/null
         mv -f $HOME/4gcheck.py /etc/SSHPlus/4gcheck.py
     }
 
