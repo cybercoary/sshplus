@@ -6,8 +6,8 @@ from telegram import Update, Bot
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
 # Configurações do token de acesso e do bot
-ACCESS_TOKEN = "APP_USR-3725334823147849-112610-ccb72a76edc39a5c0902ac0975e8c553-2069289633"
-TELEGRAM_TOKEN = "7835190128:AAEyl7RKHfuQRdOu6KvjU0XHEnxiYqTwppI"
+ACCESS_TOKEN = ""
+TELEGRAM_TOKEN = ""
 
 # Função para gerar UUID v4
 def generate_uuid_v4():
